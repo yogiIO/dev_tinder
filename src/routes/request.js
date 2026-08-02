@@ -6,15 +6,15 @@ const ConnectionRequest = require("../models/connectionRequest");
 // /request/review/:status/:requestId
 const requestRouter = express.Router();
 
-requestRouter.get("/feed", async (req, res) => {
-  try {
-    const allUser = await User.find({});
-    res.send(allUser);
-  } catch (error) {
-    console.log(error);
-    res.status(400).send("Error occured");
-  }
-});
+// requestRouter.get("/feed", async (req, userAuth, res) => {
+//   try {
+//     const allUser = await User.find({});
+//     res.send(allUser);
+//   } catch (error) {
+//     console.log(error);
+//     res.status(400).send("Error occured");
+//   }
+// });
 
 requestRouter.post(
   "/request/send/:status/:toUserId",

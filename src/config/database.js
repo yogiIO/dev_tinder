@@ -3,13 +3,12 @@ const mongoose = require("mongoose");
 function getClusterUserDetails(){
     let pwd, user = "dizizoggy";
     try {
-        pwd = encodeURIComponent("Pwd@1230")
+        pwd = encodeURIComponent(process.env.DB_SECRET)
     } catch (error) {
-        pwd="Pwd@1230"
+        pwd=process.env.DB_SECRET
     }
     return `${user}:${pwd}`
 }
-
 
 // const URL=`mongodb+srv://dizizoggy:<db_password>@devtinder.kzkrwaq.mongodb.net//` //-->cluster URL
 
